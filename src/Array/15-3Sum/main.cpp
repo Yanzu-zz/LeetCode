@@ -17,7 +17,7 @@ public:
 
     // 然后就是开始遍历
     // 当前控制第一个数组位置，在它之前的数字都访问过了，不会再理会
-    for (int first = 0; first < n; first++)
+    for (int first = 0; first < n - 2; first++)
     {
       // 当前数字不能和上一个数组一致，不然就会重复
       if (first > 0 && nums[first] == nums[first - 1])
