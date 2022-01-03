@@ -6,7 +6,7 @@ using namespace std;
 class Solution1154
 {
 private:
-  // 每个月有多少天， 0 - 11月
+  // 每个月有多少天， 0 - 11月，注意这里的2月是按照平年的数据写的
   const int presum[12] = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
 
 public:
@@ -22,6 +22,7 @@ public:
     res += presum[month - 1];
     // 是闰年的话需要额外加一天，前提是当前月份是超过 2 月的
     if (month > 2)
+      // 四年一闰，百年不闰，四百年再闰
       if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
         res += 1;
     res += day;
