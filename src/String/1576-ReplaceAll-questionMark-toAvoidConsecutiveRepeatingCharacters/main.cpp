@@ -21,7 +21,10 @@ public:
         for (int ch = 97; ch <= 122; ch++)
         {
           if (ch != prev && ch != next)
+          {
             s[i] = ch;
+            break;
+          }
         }
       }
     }
