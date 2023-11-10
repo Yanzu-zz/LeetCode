@@ -1,21 +1,18 @@
 class Solution:
     def findTheLongestBalancedSubstring(self, s: str) -> int:
-        n = len(s)
-        i = 0
-        l, r = 0, 0
         ans = 0
+        n = len(s)
+        i = s.find("0")
 
         while i < n:
-            vote = 0
-            l, r = i, i
-            while r < n and s[r] == '0':
-                vote += 1
-                r += 1
-            while r < n and s[r] == '1' and vote > 0:
-                vote -= 1
-                r += 1
+            vote0, vote1 = 0, 0
+            while i < n and s[i] == '0':
+                vote0 += 1
+                i += 1
+            while i < n and s[i] == '1':
+                vote1 += 1
+                i += 1
 
-            i = r + 1
-            ans = max(ans, r - l)
+            ans = max(ans, min(vote0, vote1) << 1)
 
         return ans
