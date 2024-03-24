@@ -8,7 +8,7 @@ class FrequencyTracker:
     def add(self, number: int) -> None:
       if self.frequency_cnt[self.num_cnt[number]] > 0:
         self.frequency_cnt[self.num_cnt[number]] -= 1
-
+x`
       self.num_cnt[number] += 1
       self.frequency_cnt[self.num_cnt[number]] += 1
 
